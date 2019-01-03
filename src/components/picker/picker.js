@@ -1,7 +1,7 @@
 import React from 'react';
 import './picker.css';
 
-export const Picker = ({color, indexColor, handleClick, countIncrement}) => {
+const Picker = ({color, indexColor, handleClick, countIncrement}) => {
     let class_name = color + ' picker';
 
     return (
@@ -11,3 +11,5 @@ export const Picker = ({color, indexColor, handleClick, countIncrement}) => {
         }}></div>
     );
 }
+
+export default Picker;

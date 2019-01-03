@@ -3,7 +3,7 @@ import Picker from '../picker/picker';
 import './colorpicker.css';
 
 
-export const ColorPicker = ({ colors, clickHandle, incrementCount }) => {
+const ColorPicker = ({ colors, clickHandle, incrementCount }) => {
     let pickers = colors.map((c, i) => {
         return (
         <Picker 
@@ -22,3 +22,5 @@ export const ColorPicker = ({ colors, clickHandle, incrementCount }) => {
         </div>
     );
 }
+
+export default ColorPicker;

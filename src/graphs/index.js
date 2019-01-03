@@ -13,8 +13,7 @@ const randomCollection = (c) => {
     return x;
 }
 
-
-export default class Graphs {
+class Graphs {
     constructor(size = 3) {
         this.size = size;
         this.nodes = {};
@@ -105,3 +104,5 @@ export default class Graphs {
         list_update_edge_weights.forEach((param_id) => this.setEdgeWeight(param_id));
     }
 }
+
+export default Graphs;

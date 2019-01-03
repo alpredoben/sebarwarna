@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Graphs } from './graphs';
+import Graphs from './graphs/index';
 import Grid from './components/grid/grid';
 import ColorPicker from './components/pallate/colorpicker';
 import './App.css';
 
 
 const SIZE = 12;
-const LISTCOLOR = [
+const LIST_COLOR = [
   'blue',
   'red',
   'green',
@@ -14,35 +14,43 @@ const LISTCOLOR = [
   'orange'
 ];
 
-class App extends Component {
-  constructor(props) {
+export default class App extends Component 
+{
+  constructor(props)
+  {
     super(props);
+    
+    this.incrementCount = this.incrementCount.bind(this);
+    this.inputSlider = this.inputSlider.bind(this);
+    this.restart = this.restart.bind(this);
+    this.fillColor = this.fillColor.bind(this);
+
     this.state = {
       size: SIZE,
       graph: new Graphs(SIZE),
-      colors: LISTCOLOR,
+      colors: LIST_COLOR,
       count: 0
     }
   }
 
+
   incrementCount() {
-    this.setState({
-      count: this.state.count + 1
-    });    
+    this.setState({ count: this.state.count + 1 });
   }
 
   restart() {
+    console.log(this.state);
+
     this.setState({
       graph: new Graphs(this.state.size),
       count: 0
-    })
+    });
   }
 
-
-  inputSlider(value) {
+  inputSlider(val) {
     this.setState({
-      size: value,
-      graph: this.newGrid(value, this.state.colors),
+      size: val,
+      graph: this.newGrid(val, this.state.colors),
       count: 0
     });
   }
@@ -50,7 +58,27 @@ class App extends Component {
   fillColor(c) {
     this.state.graph.fillColor(c);
   }
-  
-}
 
-export default App;
+  render() {
+    return(
+      <div className="content">
+        <div className="header">
+          <h2>Sebar Warna</h2>
+          <div className="restart-game" 
+            onClick={ (e) => { this.restart()} }>
+            Game Baru
+          </div>
+          <div className="count">
+            Tergantikan <span>{this.state.count}</span>
+          </div>
+        </div>
+
+        <div>
+          <ColorPicker colors={this.state.colors} clickHandle={this.fillColor} incrementCount={this.incrementCount} />
+        </div>
+        <Grid grid={this.state.graph} colors={this.state.colors} size={this.state.size}/>
+      </div>
+    );
+  }
+
+}
