@@ -40,8 +40,17 @@ class App extends Component {
 
 
   inputSlider(value) {
-    
+    this.setState({
+      size: value,
+      graph: this.newGrid(value, this.state.colors),
+      count: 0
+    });
   }
+
+  fillColor(c) {
+    this.state.graph.fillColor(c);
+  }
+  
 }
 
 export default App;
