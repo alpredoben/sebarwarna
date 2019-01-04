@@ -11,7 +11,9 @@ const LIST_COLOR = [
   'red',
   'green',
   'yellow',
-  'orange'
+  'orange',
+  'black',
+  'cyan'
 ];
 
 export default class App extends Component 
@@ -63,10 +65,10 @@ export default class App extends Component
     return(
       <div className="content">
         <div className="header">
-          <h2>Sebar Warna</h2>
+          <h2>Penyebaran Warna</h2>
           <div className="restart-game" 
             onClick={ (e) => { this.restart()} }>
-            Game Baru
+            Mulai Baru
           </div>
           <div className="count">
             Tergantikan <span>{this.state.count}</span>

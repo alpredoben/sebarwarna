@@ -1,7 +1,7 @@
 import Edge from './edge'; //Import class batas tepi
 import Node from './node'; //Import class node
 
-const NUMBERS = [0, 1, 2, 3, 4];
+const NUMBERS = [0, 1, 2, 3, 4, 5, 6];
 
 const randomCollection = (c) => {
     let x = 0;

@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: #1d1e19;
+  background-color: #f6f7ee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,6 +10,11 @@ body {
 h1 {
   margin: 0;
   color: #f6f7ee;
+}
+
+h2{
+  margin:0;
+  color: blue;
 }
 
 .header {
@@ -32,9 +37,9 @@ h1 {
   padding: 2px;
   font-size: 10pt;
   border-width: 1px;
-  border-style: solid;
-  background-color: #23221c;
-  color: #686964;
+  border-style: none;
+  background-color: lavender;
+  color: darkblue;
 }
 
 .count span {
@@ -45,13 +50,14 @@ h1 {
 
 .content {
   max-width: 80vh;
+  margin: 0 auto;
 }
 
 .restart-game {
   white-space: nowrap;
   margin-right: 10px;
   padding: 5px;
-  background: linear-gradient(to bottom, #e0e0e0, #b0b0b0);
+  background: linear-gradient(to bottom, rgb(123, 235, 235), #cadd3f);
   cursor: pointer;
   margin: 0;
 }
