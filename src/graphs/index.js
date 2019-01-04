@@ -87,7 +87,7 @@ class Graphs {
             let current_node = processing.pop();
             this.updateColor(current_node, color);
             see_id.push(current_node);
-            this.edgesByNode[current_node].forEach((param_edge) => {
+            this.edge_node[current_node].forEach((param_edge) => {
                 if (see_id.indexOf(param_edge.finish_id) > -1) {
                     return;
                 }
